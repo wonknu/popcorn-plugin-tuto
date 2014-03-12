@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<meta name="description" content="">
+		<meta name="author" content="faby">
+		<script src="popcorn.js" type="text/javascript" charset="utf-8"></script>
+		<script src="popcorn.linkMouseOver.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div>
+			<video id="myvideo" width="400" height="222" controls="controls">
+				<source src="http://ic.adfab.fr/prelude/TULLE_MOV_1MB_1.mp4" type="video/mp4" />
+			</video>
+			<div class="insert-tag"></div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+		var pop;
+		document.addEventListener("DOMContentLoaded", function ()
+		{
+			
+			pop = Popcorn("#myvideo");
+			
+			pop.linkMouseOver({
+				start: 2, // time to start displaying the link
+				end: 10, // time to remove the link
+				targetTag: '.insert-tag', // html element to be used with querySelector
+				text: 'hello ! over me', // text inserted to the link tag
+				html: '<img src="http://placekitten.com/100/100" />', // html displayed on over
+				href: 'http://placekitten.com/102/102' // tag link
+			});
+			
+		}, false);
+		</script>
+	</body>
+</html>
